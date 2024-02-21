@@ -61,6 +61,7 @@ public class PostedService {
          the_posted.setDescription(_posted.getDescription());
          List<Integer> listavacia = new ArrayList<>();
          the_posted.setCategory(_posted.getCategory());
+         the_posted.setPosted_fav(false);
          the_posted.setPosted_fav(_posted.getPosted_fav());
          the_posted.setCommentsId(listavacia);
          the_posted.setLocationX(_posted.getLocationX());

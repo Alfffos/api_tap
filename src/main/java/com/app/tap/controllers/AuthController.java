@@ -1,6 +1,10 @@
-package com.app.tap.controllers.auth;
+package com.app.tap.controllers;
 
 
+import com.app.tap.entitites.AuthResponse;
+import com.app.tap.entitites.LoginRequest;
+import com.app.tap.entitites.RegisterRequest;
+import com.app.tap.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

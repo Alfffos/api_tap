@@ -1,5 +1,8 @@
-package com.app.tap.controllers.auth;
+package com.app.tap.service;
 
+import com.app.tap.entitites.AuthResponse;
+import com.app.tap.entitites.LoginRequest;
+import com.app.tap.entitites.RegisterRequest;
 import com.app.tap.entitites.Uuser;
 import com.app.tap.enums.Role;
 import com.app.tap.repository.UuserRepository;

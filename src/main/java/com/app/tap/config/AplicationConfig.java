@@ -1,6 +1,5 @@
 package com.app.tap.config;
 
-import com.app.tap.controllers.auth.JwtService;
 import com.app.tap.repository.UuserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +37,7 @@ public class AplicationConfig {
         return  authenticationProvider;
 
     }
+
 
 
     @Bean

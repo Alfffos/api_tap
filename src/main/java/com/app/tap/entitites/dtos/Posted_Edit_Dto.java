@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Posted_Edit_Dto implements Serializable {
 
-    private List<String> pictured;
+    private String pictured;
     private String pictured_fav;
     private String name_posted;
     private String description;
@@ -14,7 +14,7 @@ public class Posted_Edit_Dto implements Serializable {
     private String locationX;
     private String locationY;
 
-    public Posted_Edit_Dto(List<String> pictured, String pictured_fav, String name_posted, String description, String category, Boolean posted_fav, String locationX, String locationY) {
+    public Posted_Edit_Dto(String pictured, String pictured_fav, String name_posted, String description, String category, Boolean posted_fav, String locationX, String locationY) {
         this.pictured = pictured;
         this.pictured_fav = pictured_fav;
         this.name_posted = name_posted;
@@ -30,11 +30,11 @@ public class Posted_Edit_Dto implements Serializable {
     }
 
 
-    public List<String> getPictured() {
+    public String getPictured() {
         return pictured;
     }
 
-    public void setPictured(List<String> pictured) {
+    public void setPictured(String pictured) {
         this.pictured = pictured;
     }
 

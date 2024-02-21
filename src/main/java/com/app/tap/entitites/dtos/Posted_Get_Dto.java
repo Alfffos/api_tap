@@ -7,7 +7,7 @@ public class Posted_Get_Dto implements Serializable {
 
     private Integer postedId;
     private Integer UuserId;
-    private List<String> pictured;
+    private String pictured;
     private String pictured_fav;
     private String name_posted;
     private String description;
@@ -22,7 +22,7 @@ public class Posted_Get_Dto implements Serializable {
 
     }
 
-    public Posted_Get_Dto(Integer postedId, Integer uuserId, List<String> pictured, String pictured_fav, String name_posted, String description, List<Integer> commentsId, Boolean posted_fav, String category, String locationX, String locationY) {
+    public Posted_Get_Dto(Integer postedId, Integer uuserId, String pictured, String pictured_fav, String name_posted, String description, List<Integer> commentsId, Boolean posted_fav, String category, String locationX, String locationY) {
         this.postedId = postedId;
         UuserId = uuserId;
         this.pictured = pictured;
@@ -53,11 +53,11 @@ public class Posted_Get_Dto implements Serializable {
         UuserId = uuserId;
     }
 
-    public List<String> getPictured() {
+    public String getPictured() {
         return pictured;
     }
 
-    public void setPictured(List<String> pictured) {
+    public void setPictured(String pictured) {
         this.pictured = pictured;
     }
 

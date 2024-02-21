@@ -15,7 +15,7 @@ public class Posted {
     @Column
     private Integer UuserId;
     @Column
-    private List<String> pictured;
+    private String pictured;
     @Column
     private String pictured_fav;
     @Column
@@ -39,17 +39,17 @@ public class Posted {
 
 
     public Posted() {
-
+        this.posted_fav = false;        //Inicializo en false para que se no me quede en true a la hora de crear un posteo
     }
 
-    public Posted(Long postedId, Integer uuserId, List<String> pictured, String picture_fav, String name_posted, String description, Boolean posted_fav, String category, List<Integer> commentsId, String locationX, String locationY) {
+    public Posted(Long postedId, Integer uuserId, String pictured, String picture_fav, String name_posted, String description, Boolean posted_fav, String category, List<Integer> commentsId, String locationX, String locationY) {
         this.postedId = postedId;
         UuserId = uuserId;
         this.pictured = pictured;
         this.pictured_fav = picture_fav;
         this.name_posted = name_posted;
         this.description = description;
-        this.posted_fav = posted_fav;
+        this.posted_fav = false;        //Inicializo en false para que se no me quede en true a la hora de crear un posteo
         this.category = category;
         this.commentsId = commentsId;
         this.locationX = locationX;
@@ -72,11 +72,11 @@ public class Posted {
         UuserId = uuserId;
     }
 
-    public List<String> getPictured() {
+    public String getPictured() {
         return pictured;
     }
 
-    public void setPictured(List<String> pictured) {
+    public void setPictured(String pictured) {
         this.pictured = pictured;
     }
 

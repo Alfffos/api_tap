@@ -1,4 +1,4 @@
-package com.app.tap.controllers.auth;
+package com.app.tap.entitites;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

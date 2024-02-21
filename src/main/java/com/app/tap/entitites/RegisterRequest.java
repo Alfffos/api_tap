@@ -1,4 +1,4 @@
-package com.app.tap.controllers.auth;
+package com.app.tap.entitites;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,12 +7,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class LoginRequest {
+@AllArgsConstructor
+public class RegisterRequest {
 
     String userName;
+    String email;
     String pssword;
-
+    String firstName;
+    String lastName;
 
 }

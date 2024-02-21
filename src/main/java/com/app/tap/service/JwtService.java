@@ -1,4 +1,4 @@
-package com.app.tap.controllers.auth;
+package com.app.tap.service;
 
 
 import io.jsonwebtoken.Claims;

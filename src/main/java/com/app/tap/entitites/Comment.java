@@ -10,16 +10,11 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id",nullable = false)
     private Long commentId;
-    //@ManyToOne
-    //@NotNull
-    //@JoinColumn(name = "userId")
-    //Uuser uuser;
+
 
     @Column
     private Integer uuserId;
-    //@ManyToOne
-    //@JoinColumn(name = "postedId")
-    //private Posted posted;
+
     @Column
     private Integer postedId;
     @Column

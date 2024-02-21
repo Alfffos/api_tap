@@ -6,7 +6,7 @@ import java.util.List;
 public class Posted_Create_Dto implements Serializable {
 
     private Integer UuserId;
-    private List<String> pictured;
+    private String pictured;
     private String pictured_fav;
     private String name_posted;
     private String description;
@@ -15,7 +15,7 @@ public class Posted_Create_Dto implements Serializable {
     private String locationX;
     private String locationY;
 
-    public Posted_Create_Dto(Integer uuserId, List<String> pictured, String pictured_fav, String name_posted, String description, String category, Boolean posted_fav, String locationX, String locationY) {
+    public Posted_Create_Dto(Integer uuserId, String pictured, String pictured_fav, String name_posted, String description, String category, Boolean posted_fav, String locationX, String locationY) {
         UuserId = uuserId;
         this.pictured = pictured;
         this.pictured_fav = pictured_fav;
@@ -39,11 +39,11 @@ public class Posted_Create_Dto implements Serializable {
         UuserId = uuserId;
     }
 
-    public List<String> getPictured() {
+    public String getPictured() {
         return pictured;
     }
 
-    public void setPictured(List<String> pictured) {
+    public void setPictured(String pictured) {
         this.pictured = pictured;
     }
 
