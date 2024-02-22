@@ -55,16 +55,17 @@ public class PostedService {
          Posted the_posted = new Posted();
          the_posted.setPostedId(_posted.getPostedId());
          the_posted.setUuserId(_posted.getUuserId());
-         the_posted.setPictured_fav(_posted.getPictured_fav());
-         the_posted.setPictured(_posted.getPictured());
+         the_posted.setTitle_pictured(_posted.getTitle_pictured());
          the_posted.setName_posted(_posted.getName_posted());
          the_posted.setDescription(_posted.getDescription());
          List<Integer> listavacia = new ArrayList<>();
          the_posted.setCategory(_posted.getCategory());
+         the_posted.setPosted_fav(false);
          the_posted.setPosted_fav(_posted.getPosted_fav());
          the_posted.setCommentsId(listavacia);
-         the_posted.setLocationX(_posted.getLocationX());
-         the_posted.setLocationY(_posted.getLocationY());
+         the_posted.setExtension_pictured(_posted.getExtension_pictured());
+         the_posted.setBase64_pictured(_posted.getBase64_pictured());
+
 
           return _postedRepository.save(the_posted);  // Cuando se crea un nuevo posteo se busca el Uuser en la Db y se lo asocia en el DTO del posteo.
 
@@ -99,14 +100,14 @@ public class PostedService {
 
         // aca edito todos los valores del posteo excepto el Id por es el mismo, y el Uuser porque tambien tiene que ser el mismo.
 
-        edit_posted.setPictured(edit_posted_update.getPictured());
-        edit_posted.setPictured_fav(edit_posted_update.getPictured_fav());
+        edit_posted.setTitle_pictured(edit_posted_update.getTitle_pictured());
         edit_posted.setName_posted(edit_posted_update.getName_posted());
         edit_posted.setDescription(edit_posted_update.getDescription());
         edit_posted.setPosted_fav(edit_posted_update.getPosted_fav());
         edit_posted.setCategory(edit_posted_update.getCategory());
-        edit_posted.setLocationX(edit_posted_update.getLocationX());
-        edit_posted.setLocationY(edit_posted_update.getLocationY());
+        edit_posted.setBase64_pictured(edit_posted_update.getBase64_pictured());
+        edit_posted.setExtension_pictured(edit_posted_update.getExtension_pictured());
+
 
         //aca tengo que guardarlo en la db
         _postedRepository.save(edit_posted);

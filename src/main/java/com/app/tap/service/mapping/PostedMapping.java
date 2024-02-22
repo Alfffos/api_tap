@@ -32,12 +32,13 @@ public class PostedMapping {
         posted_get_dto.setUuserId(posted.getUuserId());
         //posted_get_dto.setUuser(posted.getUuserId());  //aca tuve que implementar el serivce de uuser para poder pasar de Uuser a Dto.
 
-        posted_get_dto.setPictured(posted.getPictured());
+        posted_get_dto.setTitle_pictured(posted.getTitle_pictured());
         posted_get_dto.setCategory(posted.getCategory());
         posted_get_dto.setPosted_fav(posted.getPosted_fav());
-        posted_get_dto.setPictured_fav(posted.getPictured_fav());
         posted_get_dto.setName_posted(posted.getName_posted());
         posted_get_dto.setDescription(posted.getDescription());
+        posted_get_dto.setExtension_pictured(posted.getExtension_pictured());
+        posted_get_dto.setBase64_pictured(posted.getBase64_pictured());
 
         // aca hay q transformar la lista de comments a comments_get_dto;
         /*List<Comment_Dto> commentDTOList = new ArrayList<>();
@@ -49,8 +50,6 @@ public class PostedMapping {
         //posted_get_dto.setComments(commentDTOList); //Esto recibe una lista pero de tipo comments_get_dto.
 
         posted_get_dto.setCommentsId(posted.getCommentsId());
-        posted_get_dto.setLocationX(posted.getLocationX());
-        posted_get_dto.setLocationY(posted.getLocationY());
 
         return posted_get_dto;
     }
@@ -63,14 +62,13 @@ public class PostedMapping {
         //Uuser myUuser = _userService.findByIdUuser(posted_create_dto.getUuser_get_dto().getId()).orElse(null); // Mediante el findbyId del Uuser service me traigo el uuser y lo uso para guardarlo en la base de datos.
 
         posted.setUuserId(posted_create_dto.getUuserId());
-        posted.setPictured(posted_create_dto.getPictured());
-        posted.setPictured_fav(posted_create_dto.getPictured_fav());
+        posted.setTitle_pictured(posted_create_dto.getTitle_pictured());
         posted.setName_posted(posted_create_dto.getName_posted());
         posted.setDescription(posted_create_dto.getDescription());
         posted.setPosted_fav(posted_create_dto.getPosted_fav());
         posted.setCategory(posted_create_dto.getCategory());
-        posted.setLocationX(posted_create_dto.getLocationX());
-        posted.setLocationY(posted_create_dto.getLocationY());
+        posted.setExtension_pictured(posted_create_dto.getExtension_pictured());
+        posted.setBase64_pictured(posted_create_dto.getBase64_pictured());
 
         return posted;
 
@@ -85,14 +83,13 @@ public class PostedMapping {
         //Uuser myUuser = _userService.findByIdUuser(posted_get_dto.getUuser().getId()).orElse(null);
 
         posted.setUuserId(posted_get_dto.getUuserId());
-        posted.setPictured(posted_get_dto.getPictured());
-        posted.setPictured_fav(posted_get_dto.getPictured_fav());
+        posted.setTitle_pictured(posted_get_dto.getTitle_pictured());
         posted.setName_posted(posted_get_dto.getName_posted());
         posted.setPosted_fav(posted_get_dto.getPosted_fav());
         posted.setCategory(posted_get_dto.getCategory());
         posted.setDescription(posted_get_dto.getDescription());
-        posted.setLocationX(posted_get_dto.getLocationX());
-        posted.setLocationY(posted_get_dto.getLocationY());
+        posted.setExtension_pictured(posted_get_dto.getExtension_pictured());
+        posted.setBase64_pictured(posted.getBase64_pictured());
 
         return  posted;
     }

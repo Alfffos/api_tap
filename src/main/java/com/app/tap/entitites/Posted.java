@@ -1,6 +1,5 @@
 package com.app.tap.entitites;
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -15,15 +14,16 @@ public class Posted {
     @Column
     private Integer UuserId;
     @Column
-    private List<String> pictured;
+    private String title_pictured;
     @Column
-    private String pictured_fav;
+    private String extension_pictured;
+    @Column
+    private String base64_pictured;
     @Column
     private String name_posted;
     @Column
     private String description;
-    //@OneToMany(mappedBy = "posted" , cascade = CascadeType.ALL)
-    //private List<Comment> comments;
+
     @Column
     private Boolean posted_fav;
     @Column
@@ -31,29 +31,23 @@ public class Posted {
     @Column
     private List<Integer> commentsId;
 
-    @Column
-    private String locationX;        // Hay que cambiar el tipo de dato de String a Location para poder usar google maps.
-    @Column
-    private String locationY;
 
-
-
+    
     public Posted() {
-
+        this.posted_fav= false;
     }
 
-    public Posted(Long postedId, Integer uuserId, List<String> pictured, String picture_fav, String name_posted, String description, Boolean posted_fav, String category, List<Integer> commentsId, String locationX, String locationY) {
+    public Posted(Long postedId, Integer uuserId, String title_pictured, String extension_pictured, String base64_pictured, String name_posted, String description, Boolean posted_fav, String category, List<Integer> commentsId) {
         this.postedId = postedId;
         UuserId = uuserId;
-        this.pictured = pictured;
-        this.pictured_fav = picture_fav;
+        this.title_pictured = title_pictured;
+        this.extension_pictured = extension_pictured;
+        this.base64_pictured = base64_pictured;
         this.name_posted = name_posted;
         this.description = description;
-        this.posted_fav = posted_fav;
+        this.posted_fav = false;
         this.category = category;
         this.commentsId = commentsId;
-        this.locationX = locationX;
-        this.locationY = locationY;
     }
 
     public Long getPostedId() {
@@ -72,20 +66,12 @@ public class Posted {
         UuserId = uuserId;
     }
 
-    public List<String> getPictured() {
-        return pictured;
+    public String getTitle_pictured() {
+        return title_pictured;
     }
 
-    public void setPictured(List<String> pictured) {
-        this.pictured = pictured;
-    }
-
-    public String getPictured_fav() {
-        return pictured_fav;
-    }
-
-    public void setPictured_fav(String picture_fav) {
-        this.pictured_fav = picture_fav;
+    public void setTitle_pictured(String pictured) {
+        this.title_pictured = pictured;
     }
 
     public String getName_posted() {
@@ -128,19 +114,19 @@ public class Posted {
         this.commentsId = commentsId;
     }
 
-    public String getLocationX() {
-        return locationX;
+    public String getExtension_pictured() {
+        return extension_pictured;
     }
 
-    public void setLocationX(String locationX) {
-        this.locationX = locationX;
+    public void setExtension_pictured(String extension_pictured) {
+        this.extension_pictured = extension_pictured;
     }
 
-    public String getLocationY() {
-        return locationY;
+    public String getBase64_pictured() {
+        return base64_pictured;
     }
 
-    public void setLocationY(String locationY) {
-        this.locationY = locationY;
+    public void setBase64_pictured(String base64_pictured) {
+        this.base64_pictured = base64_pictured;
     }
 }

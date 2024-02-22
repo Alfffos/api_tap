@@ -1,5 +1,7 @@
 package com.app.tap.entitites.dtos;
 
+import jakarta.persistence.Column;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,35 +9,32 @@ public class Posted_Get_Dto implements Serializable {
 
     private Integer postedId;
     private Integer UuserId;
-    private List<String> pictured;
-    private String pictured_fav;
+    private String title_pictured;
+    private String extension_pictured;
+    private String base64_pictured;
     private String name_posted;
     private String description;
     private List<Integer> commentsId;
     private Boolean posted_fav;
     private String category;
-    private String locationX;
-    private String locationY;
 
 
     public Posted_Get_Dto(){
-
+        this.posted_fav = false;
     }
 
-    public Posted_Get_Dto(Integer postedId, Integer uuserId, List<String> pictured, String pictured_fav, String name_posted, String description, List<Integer> commentsId, Boolean posted_fav, String category, String locationX, String locationY) {
+    public Posted_Get_Dto(Integer postedId, Integer uuserId, String title_pictured, String extension_pictured, String base64_pictured, String name_posted, String description, List<Integer> commentsId, Boolean posted_fav, String category) {
         this.postedId = postedId;
         UuserId = uuserId;
-        this.pictured = pictured;
-        this.pictured_fav = pictured_fav;
+        this.title_pictured = title_pictured;
+        this.extension_pictured = extension_pictured;
+        this.base64_pictured = base64_pictured;
         this.name_posted = name_posted;
         this.description = description;
         this.commentsId = commentsId;
-        this.posted_fav = posted_fav;
+        this.posted_fav = false;
         this.category = category;
-        this.locationX = locationX;
-        this.locationY = locationY;
     }
-
 
     public Integer getPostedId() {
         return postedId;
@@ -53,20 +52,12 @@ public class Posted_Get_Dto implements Serializable {
         UuserId = uuserId;
     }
 
-    public List<String> getPictured() {
-        return pictured;
+    public String getTitle_pictured() {
+        return title_pictured;
     }
 
-    public void setPictured(List<String> pictured) {
-        this.pictured = pictured;
-    }
-
-    public String getPictured_fav() {
-        return pictured_fav;
-    }
-
-    public void setPictured_fav(String pictured_fav) {
-        this.pictured_fav = pictured_fav;
+    public void setTitle_pictured(String title_pictured) {
+        this.title_pictured = title_pictured;
     }
 
     public String getName_posted() {
@@ -109,19 +100,19 @@ public class Posted_Get_Dto implements Serializable {
         this.category = category;
     }
 
-    public String getLocationX() {
-        return locationX;
+    public String getExtension_pictured() {
+        return extension_pictured;
     }
 
-    public void setLocationX(String locationX) {
-        this.locationX = locationX;
+    public void setExtension_pictured(String extension_pictured) {
+        this.extension_pictured = extension_pictured;
     }
 
-    public String getLocationY() {
-        return locationY;
+    public String getBase64_pictured() {
+        return base64_pictured;
     }
 
-    public void setLocationY(String locationY) {
-        this.locationY = locationY;
+    public void setBase64_pictured(String base64_pictured) {
+        this.base64_pictured = base64_pictured;
     }
 }
