@@ -17,6 +17,7 @@ public class Posted {
     private String title_pictured;
     @Column
     private String extension_pictured;
+    @Lob
     @Column
     private String base64_pictured;
     @Column
